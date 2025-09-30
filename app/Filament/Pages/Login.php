@@ -36,7 +36,7 @@ class Login extends BaseLogin
             ]);
         }
 
-        if (! Filament::auth()->attempt($this->getCredentialsFromFormData($data), $data['remember'] ?? false)) {
+        if (!Filament::auth()->attempt($this->getCredentialsFromFormData($data), $data['remember'] ?? false)) {
             $this->throwFailureValidationException();
         }
 
@@ -44,7 +44,7 @@ class Login extends BaseLogin
 
         if (
             ($user instanceof FilamentUser) &&
-            (! $user->canAccessPanel(Filament::getCurrentPanel()))
+            (!$user->canAccessPanel(Filament::getCurrentPanel()))
         ) {
             Filament::auth()->logout();
 
