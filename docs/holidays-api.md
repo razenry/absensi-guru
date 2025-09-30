@@ -140,6 +140,7 @@ Success Response:
 
 ```json
 {
+    "message": "Successfully Create new Holiday",
     "data": {
         "id": 1,
         "name": "Hari Lebaran",
@@ -163,7 +164,10 @@ Error Response:
 {
     "message": "The name field is required. (and 4 more errors)",
     "errors": {
-        "name": ["The name field is required.", "Maximum of 255 characters allowed."],
+        "name": [
+            "The name field is required.",
+            "Maximum of 255 characters allowed."
+        ],
         "date": ["The date field is required."],
         "description": ["The description field is required."],
         "is_recurring": ["The is recurring field is required."],
@@ -196,6 +200,7 @@ Success Response:
 
 ```json
 {
+    "message": "Successfully Update Holiday with id {id}",
     "data": {
         "id": 1,
         "name": "Hari Lebaran",
@@ -225,12 +230,15 @@ Error Response:
 {
     "message": "The name field is required. (and 4 more errors)",
     "errors": {
-        "name": ["The name field is required.", "Maximum of 255 characters allowed."],
+        "name": [
+            "The name field is required.",
+            "Maximum of 255 characters allowed."
+        ],
         "date": ["The date field is required."],
         "description": ["The description field is required."],
         "is_recurring": ["The is recurring field is required."],
         "is_active": ["The is active field is required."]
-    }    
+    }
 }
 ```
 
@@ -262,7 +270,7 @@ Error Response:
 {
     "message": "Data with id {id} not found"
 }
-``` 
+```
 
 ```json
 {
