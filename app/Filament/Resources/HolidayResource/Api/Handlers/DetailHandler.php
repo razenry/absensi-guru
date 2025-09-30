@@ -32,7 +32,7 @@ class DetailHandler extends Handlers
         )
             ->first();
 
-        if (!$query) return static::sendNotFoundResponse();
+        if (!$query) return static::sendNotFoundResponse("Data with id $id not found");
 
         return new HolidayTransformer($query);
     }

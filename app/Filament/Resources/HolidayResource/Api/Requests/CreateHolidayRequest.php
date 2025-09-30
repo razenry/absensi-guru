@@ -27,7 +27,6 @@ class CreateHolidayRequest extends FormRequest
 			'description' => 'required|string',
 			'is_recurring' => 'required',
 			'is_active' => 'required',
-			'deleted_at' => 'required'
 		];
     }
 }
