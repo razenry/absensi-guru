@@ -33,10 +33,18 @@ class AuthController extends Controller
             //create token with abilities
             $token = $user->createToken('token', $abilities)->plainTextToken;
 
-            return new LoginResource([
-                'token' => $token,
-                'user' => $user
-            ]);
+            $return = [
+                "success" => true,
+                "message" => "Login success.",
+                "status" => 200,
+                "data" => [
+                    "access_token" => $token,
+                    "token_type" => "Bearer",
+                    "user" => $user
+                ]
+            ];
+
+            return new LoginResource($return);
         } else {
             //jika gagal kirim response error
             return response()->json([
